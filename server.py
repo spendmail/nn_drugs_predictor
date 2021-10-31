@@ -25,9 +25,7 @@ def index():
             "predicted_name": predicted_name
         })
     except Exception as e:
-        print(e)
-
-    return jsonify({"success": False})
+        return jsonify({"success": False, "message": str(e)})
 
 
 if __name__ == "__main__":

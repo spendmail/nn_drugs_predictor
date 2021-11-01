@@ -1,8 +1,19 @@
-## Requirements
+## Launch Server in docker container
 
-- [x] python 3.8.*
+```sh
+docker-compose up -d
+```
 
-## Installation
+## Send HTTP request
+
+```sh
+curl --header "Content-Type: application/json" \
+--request POST \
+--data '{"name":"АНАЛЬГИН ТАБ. 0.5Г N20 ОБН"}' \
+http://localhost:5000/ 
+```
+
+## Local Installation
 
 ```sh
 sudo apt update
@@ -17,23 +28,14 @@ virtualenv -p /usr/bin/python3 venv
 ./venv/bin/python3 train.py
 ```
 
-## Launch in CLI
+## Usage in CLI
 
 ```sh
-./venv/bin/python3 predict.py
+./venv/bin/python3 predict.py "АНАЛЬГИН ТАБ. 0.5Г N20 ОБН"
 ```
 
-## Launch a web server
+## Launch a local web server
 
 ```sh
-./venv/bin/python3 server.py 
-```
-
-## Query to a web server
-
-```sh
-curl --header "Content-Type: application/json" \
---request POST \
---data '{"name":"АНАЛЬГИН ТАБ. 0.5Г N20 ОБН"}' \
-http://127.0.0.1:5000/
+./venv/bin/python3 server.py
 ```

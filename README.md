@@ -1,4 +1,4 @@
-## Launch Server in docker container
+## Launch server in a docker container
 
 ```sh
 docker-compose up -d
